@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E6A883BB139E7BAD0080BCD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A883BA139E7BAD0080BCD3 /* UIKit.framework */; };
+		E6A883BD139E7BAD0080BCD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A883BC139E7BAD0080BCD3 /* Foundation.framework */; };
+		E6A883BF139E7BAD0080BCD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A883BE139E7BAD0080BCD3 /* CoreGraphics.framework */; };
+		E6A883C5139E7BAD0080BCD3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6A883C3139E7BAD0080BCD3 /* InfoPlist.strings */; };
+		E6A883C8139E7BAD0080BCD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A883C7139E7BAD0080BCD3 /* main.m */; };
+		E6A883CB139E7BAD0080BCD3 /* TestWebPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A883CA139E7BAD0080BCD3 /* TestWebPAppDelegate.m */; };
+		E6A883CF139E7BAD0080BCD3 /* TestWebPAppDelegate_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A883CE139E7BAD0080BCD3 /* TestWebPAppDelegate_iPhone.m */; };
+		E6A883D2139E7BAD0080BCD3 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A883D0139E7BAD0080BCD3 /* MainWindow_iPhone.xib */; };
+		E6A883D6139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A883D5139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.m */; };
+		E6A883D9139E7BAD0080BCD3 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6A883D7139E7BAD0080BCD3 /* MainWindow_iPad.xib */; };
+		E6A883EC139EABAD0080BCD3 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A883EB139EABAD0080BCD3 /* WebP.framework */; };
+		E6B38AD013B7AC06001B8D9B /* test0.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38AC613B7AC06001B8D9B /* test0.webp */; };
+		E6B38AD113B7AC06001B8D9B /* test1.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38AC713B7AC06001B8D9B /* test1.webp */; };
+		E6B38AD213B7AC06001B8D9B /* test2.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38AC813B7AC06001B8D9B /* test2.webp */; };
+		E6B38AD313B7AC06001B8D9B /* test3.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38AC913B7AC06001B8D9B /* test3.webp */; };
+		E6B38AD413B7AC06001B8D9B /* test4.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38ACA13B7AC06001B8D9B /* test4.webp */; };
+		E6B38AD513B7AC06001B8D9B /* test5.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38ACB13B7AC06001B8D9B /* test5.webp */; };
+		E6B38AD613B7AC06001B8D9B /* test6.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38ACC13B7AC06001B8D9B /* test6.webp */; };
+		E6B38AD713B7AC06001B8D9B /* test7.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38ACD13B7AC06001B8D9B /* test7.webp */; };
+		E6B38AD813B7AC06001B8D9B /* test8.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38ACE13B7AC06001B8D9B /* test8.webp */; };
+		E6B38AD913B7AC06001B8D9B /* test9.webp in Resources */ = {isa = PBXBuildFile; fileRef = E6B38ACF13B7AC06001B8D9B /* test9.webp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E6A883B6139E7BAD0080BCD3 /* TestWebP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWebP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A883BA139E7BAD0080BCD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E6A883BC139E7BAD0080BCD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E6A883BE139E7BAD0080BCD3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E6A883C2139E7BAD0080BCD3 /* TestWebP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestWebP-Info.plist"; sourceTree = "<group>"; };
+		E6A883C4139E7BAD0080BCD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E6A883C6139E7BAD0080BCD3 /* TestWebP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestWebP-Prefix.pch"; sourceTree = "<group>"; };
+		E6A883C7139E7BAD0080BCD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E6A883C9139E7BAD0080BCD3 /* TestWebPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestWebPAppDelegate.h; sourceTree = "<group>"; };
+		E6A883CA139E7BAD0080BCD3 /* TestWebPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestWebPAppDelegate.m; sourceTree = "<group>"; };
+		E6A883CD139E7BAD0080BCD3 /* TestWebPAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TestWebPAppDelegate_iPhone.h; path = iPhone/TestWebPAppDelegate_iPhone.h; sourceTree = "<group>"; };
+		E6A883CE139E7BAD0080BCD3 /* TestWebPAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TestWebPAppDelegate_iPhone.m; path = iPhone/TestWebPAppDelegate_iPhone.m; sourceTree = "<group>"; };
+		E6A883D1139E7BAD0080BCD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		E6A883D4139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TestWebPAppDelegate_iPad.h; path = iPad/TestWebPAppDelegate_iPad.h; sourceTree = "<group>"; };
+		E6A883D5139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TestWebPAppDelegate_iPad.m; path = iPad/TestWebPAppDelegate_iPad.m; sourceTree = "<group>"; };
+		E6A883D8139E7BAD0080BCD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		E6A883EB139EABAD0080BCD3 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../../webp/WebP.framework; sourceTree = "<group>"; };
+		E6B38AC613B7AC06001B8D9B /* test0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test0.webp; sourceTree = "<group>"; };
+		E6B38AC713B7AC06001B8D9B /* test1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.webp; sourceTree = "<group>"; };
+		E6B38AC813B7AC06001B8D9B /* test2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.webp; sourceTree = "<group>"; };
+		E6B38AC913B7AC06001B8D9B /* test3.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test3.webp; sourceTree = "<group>"; };
+		E6B38ACA13B7AC06001B8D9B /* test4.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test4.webp; sourceTree = "<group>"; };
+		E6B38ACB13B7AC06001B8D9B /* test5.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test5.webp; sourceTree = "<group>"; };
+		E6B38ACC13B7AC06001B8D9B /* test6.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test6.webp; sourceTree = "<group>"; };
+		E6B38ACD13B7AC06001B8D9B /* test7.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test7.webp; sourceTree = "<group>"; };
+		E6B38ACE13B7AC06001B8D9B /* test8.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test8.webp; sourceTree = "<group>"; };
+		E6B38ACF13B7AC06001B8D9B /* test9.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test9.webp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6A883B3139E7BAD0080BCD3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A883EC139EABAD0080BCD3 /* WebP.framework in Frameworks */,
+				E6A883BB139E7BAD0080BCD3 /* UIKit.framework in Frameworks */,
+				E6A883BD139E7BAD0080BCD3 /* Foundation.framework in Frameworks */,
+				E6A883BF139E7BAD0080BCD3 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6A883AB139E7BAD0080BCD3 = {
+			isa = PBXGroup;
+			children = (
+				E6A883C0139E7BAD0080BCD3 /* TestWebP */,
+				E6A883B9139E7BAD0080BCD3 /* Frameworks */,
+				E6A883B7139E7BAD0080BCD3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6A883B7139E7BAD0080BCD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6A883B6139E7BAD0080BCD3 /* TestWebP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E6A883B9139E7BAD0080BCD3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6A883EB139EABAD0080BCD3 /* WebP.framework */,
+				E6A883BA139E7BAD0080BCD3 /* UIKit.framework */,
+				E6A883BC139E7BAD0080BCD3 /* Foundation.framework */,
+				E6A883BE139E7BAD0080BCD3 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6A883C0139E7BAD0080BCD3 /* TestWebP */ = {
+			isa = PBXGroup;
+			children = (
+				E6A883C9139E7BAD0080BCD3 /* TestWebPAppDelegate.h */,
+				E6A883CA139E7BAD0080BCD3 /* TestWebPAppDelegate.m */,
+				E6A883CC139E7BAD0080BCD3 /* iPhone */,
+				E6A883D3139E7BAD0080BCD3 /* iPad */,
+				E6A883C1139E7BAD0080BCD3 /* Supporting Files */,
+			);
+			path = TestWebP;
+			sourceTree = "<group>";
+		};
+		E6A883C1139E7BAD0080BCD3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6B38AC613B7AC06001B8D9B /* test0.webp */,
+				E6B38AC713B7AC06001B8D9B /* test1.webp */,
+				E6B38AC813B7AC06001B8D9B /* test2.webp */,
+				E6B38AC913B7AC06001B8D9B /* test3.webp */,
+				E6B38ACA13B7AC06001B8D9B /* test4.webp */,
+				E6B38ACB13B7AC06001B8D9B /* test5.webp */,
+				E6B38ACC13B7AC06001B8D9B /* test6.webp */,
+				E6B38ACD13B7AC06001B8D9B /* test7.webp */,
+				E6B38ACE13B7AC06001B8D9B /* test8.webp */,
+				E6B38ACF13B7AC06001B8D9B /* test9.webp */,
+				E6A883C2139E7BAD0080BCD3 /* TestWebP-Info.plist */,
+				E6A883C3139E7BAD0080BCD3 /* InfoPlist.strings */,
+				E6A883C6139E7BAD0080BCD3 /* TestWebP-Prefix.pch */,
+				E6A883C7139E7BAD0080BCD3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6A883CC139E7BAD0080BCD3 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				E6A883CD139E7BAD0080BCD3 /* TestWebPAppDelegate_iPhone.h */,
+				E6A883CE139E7BAD0080BCD3 /* TestWebPAppDelegate_iPhone.m */,
+				E6A883D0139E7BAD0080BCD3 /* MainWindow_iPhone.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		E6A883D3139E7BAD0080BCD3 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				E6A883D4139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.h */,
+				E6A883D5139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.m */,
+				E6A883D7139E7BAD0080BCD3 /* MainWindow_iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E6A883B5139E7BAD0080BCD3 /* TestWebP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6A883DC139E7BAD0080BCD3 /* Build configuration list for PBXNativeTarget "TestWebP" */;
+			buildPhases = (
+				E6A883B2139E7BAD0080BCD3 /* Sources */,
+				E6A883B3139E7BAD0080BCD3 /* Frameworks */,
+				E6A883B4139E7BAD0080BCD3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestWebP;
+			productName = TestWebP;
+			productReference = E6A883B6139E7BAD0080BCD3 /* TestWebP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6A883AD139E7BAD0080BCD3 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E6A883B0139E7BAD0080BCD3 /* Build configuration list for PBXProject "TestWebP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E6A883AB139E7BAD0080BCD3;
+			productRefGroup = E6A883B7139E7BAD0080BCD3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E6A883B5139E7BAD0080BCD3 /* TestWebP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E6A883B4139E7BAD0080BCD3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A883C5139E7BAD0080BCD3 /* InfoPlist.strings in Resources */,
+				E6A883D2139E7BAD0080BCD3 /* MainWindow_iPhone.xib in Resources */,
+				E6A883D9139E7BAD0080BCD3 /* MainWindow_iPad.xib in Resources */,
+				E6B38AD013B7AC06001B8D9B /* test0.webp in Resources */,
+				E6B38AD113B7AC06001B8D9B /* test1.webp in Resources */,
+				E6B38AD213B7AC06001B8D9B /* test2.webp in Resources */,
+				E6B38AD313B7AC06001B8D9B /* test3.webp in Resources */,
+				E6B38AD413B7AC06001B8D9B /* test4.webp in Resources */,
+				E6B38AD513B7AC06001B8D9B /* test5.webp in Resources */,
+				E6B38AD613B7AC06001B8D9B /* test6.webp in Resources */,
+				E6B38AD713B7AC06001B8D9B /* test7.webp in Resources */,
+				E6B38AD813B7AC06001B8D9B /* test8.webp in Resources */,
+				E6B38AD913B7AC06001B8D9B /* test9.webp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6A883B2139E7BAD0080BCD3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A883C8139E7BAD0080BCD3 /* main.m in Sources */,
+				E6A883CB139E7BAD0080BCD3 /* TestWebPAppDelegate.m in Sources */,
+				E6A883CF139E7BAD0080BCD3 /* TestWebPAppDelegate_iPhone.m in Sources */,
+				E6A883D6139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E6A883C3139E7BAD0080BCD3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6A883C4139E7BAD0080BCD3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E6A883D0139E7BAD0080BCD3 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6A883D1139E7BAD0080BCD3 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		E6A883D7139E7BAD0080BCD3 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6A883D8139E7BAD0080BCD3 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E6A883DA139E7BAD0080BCD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E6A883DB139E7BAD0080BCD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E6A883DD139E7BAD0080BCD3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../webp\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestWebP/TestWebP-Prefix.pch";
+				INFOPLIST_FILE = "TestWebP/TestWebP-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E6A883DE139E7BAD0080BCD3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../webp\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestWebP/TestWebP-Prefix.pch";
+				INFOPLIST_FILE = "TestWebP/TestWebP-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6A883B0139E7BAD0080BCD3 /* Build configuration list for PBXProject "TestWebP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6A883DA139E7BAD0080BCD3 /* Debug */,
+				E6A883DB139E7BAD0080BCD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6A883DC139E7BAD0080BCD3 /* Build configuration list for PBXNativeTarget "TestWebP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6A883DD139E7BAD0080BCD3 /* Debug */,
+				E6A883DE139E7BAD0080BCD3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6A883AD139E7BAD0080BCD3 /* Project object */;
+}
