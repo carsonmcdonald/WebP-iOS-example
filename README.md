@@ -5,7 +5,11 @@ A simple example of using [libwebp](http://code.google.com/speed/webp/) in iOS.
 
 ## REQUIREMENTS
 
-To use this application you will need to compile libwebp first.
+Before you can compile the example application you will need to build the WebP framework for iOS. To do that run the build.sh file in the libwebp-build directory after downloading the latest libwebp archive. You can download the latest archive from the following URL: http://code.google.com/speed/webp/download.html
+
+The framework build will produce a single framework that will work for the simulator, iPhone and iPad devices. To use it just add it to your project.
+
+To use the demo project just open it with xcode and build.
 
 ## LICENSE
 
