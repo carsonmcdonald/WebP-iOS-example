@@ -47,7 +47,7 @@
 		E6A883D4139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TestWebPAppDelegate_iPad.h; path = iPad/TestWebPAppDelegate_iPad.h; sourceTree = "<group>"; };
 		E6A883D5139E7BAD0080BCD3 /* TestWebPAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TestWebPAppDelegate_iPad.m; path = iPad/TestWebPAppDelegate_iPad.m; sourceTree = "<group>"; };
 		E6A883D8139E7BAD0080BCD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
-		E6A883EB139EABAD0080BCD3 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../../webp/WebP.framework; sourceTree = "<group>"; };
+		E6A883EB139EABAD0080BCD3 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebP.framework; path = ../libwebp-build/WebP.framework; sourceTree = "<group>"; };
 		E6B38AC613B7AC06001B8D9B /* test0.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test0.webp; sourceTree = "<group>"; };
 		E6B38AC713B7AC06001B8D9B /* test1.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test1.webp; sourceTree = "<group>"; };
 		E6B38AC813B7AC06001B8D9B /* test2.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = test2.webp; sourceTree = "<group>"; };
@@ -183,7 +183,6 @@
 			isa = PBXProject;
 			buildConfigurationList = E6A883B0139E7BAD0080BCD3 /* Build configuration list for PBXProject "TestWebP" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -304,7 +303,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../webp\"",
+					"\"$(SRCROOT)/../libwebp-build/\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -323,7 +322,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../webp\"",
+					"\"$(SRCROOT)/../libwebp-build/\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestWebP/TestWebP-Prefix.pch";
