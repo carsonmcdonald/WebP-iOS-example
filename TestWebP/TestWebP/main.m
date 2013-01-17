@@ -2,16 +2,17 @@
 //  main.m
 //  TestWebP
 //
-// Created by Carson McDonald on 06/01/2011.
-// Copyright 2011 Carson McDonald. See LICENSE file.
+//  Created by Carson on 1/17/13.
+//  Copyright (c) 2013 Carson McDonald. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+#import "AppDelegate.h"
+
 int main(int argc, char *argv[])
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
 }

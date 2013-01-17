@@ -1,14 +1,11 @@
 //
 // Prefix header for all source files of the 'TestWebP' target in the 'TestWebP' project
 //
-// Created by Carson McDonald on 06/01/2011.
-// Copyright 2011 Carson McDonald. See LICENSE file.
-//
 
 #import <Availability.h>
 
-#ifndef __IPHONE_3_0
-#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
 #ifdef __OBJC__

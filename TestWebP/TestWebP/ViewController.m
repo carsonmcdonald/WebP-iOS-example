@@ -1,43 +1,44 @@
 //
-//  TestWebPAppDelegate.m
+//  ViewController.m
 //  TestWebP
 //
-// Created by Carson McDonald on 06/01/2011.
-// Copyright 2011 Carson McDonald. See LICENSE file.
+//  Created by Carson on 1/17/13.
+//  Copyright (c) 2013 Carson McDonald. All rights reserved.
 //
 
-#import "TestWebPAppDelegate.h"
+#import "ViewController.h"
 
 #import <WebP/decode.h>
 
-@interface TestWebPAppDelegate (Private)
+@interface ViewController (Private)
+
 - (void)displayImage:(NSString *)filePath;
+
 @end
 
-@implementation TestWebPAppDelegate
-
-@synthesize testImageView;
-@synthesize imagePickerView;
-@synthesize imageScrollView;
-@synthesize window=_window;
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+@implementation ViewController
 {
-    [self.window makeKeyAndVisible];
-    
+    NSArray *webpImages;
+}
+
+- (void)viewDidLoad
+{
     webpImages = [[[NSBundle mainBundle] pathsForResourcesOfType:@"webp" inDirectory:nil] retain];
-    [self displayImage:[webpImages objectAtIndex:0]];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
-    return YES;
+    [self displayImage:[webpImages objectAtIndex:0]];
 }
 
 - (void)dealloc
 {
-    [testImageView release];
-    [_window release];
-    [imagePickerView release];
     [webpImages release];
-    [imageScrollView release];
+    [_imagePickerView release];
+    [_imageScrollView release];
+    [_testImageView release];
     [super dealloc];
 }
 
@@ -51,7 +52,7 @@ static void free_image_data(void *info, const void *data, size_t size)
     free((void *)data);
 }
 
-- (void)displayImage:(NSString *)filePath 
+- (void)displayImage:(NSString *)filePath
 {
     // Find the path of the selected WebP image in the bundle and read it into memory
     NSData *myData = [NSData dataWithContentsOfFile:filePath];
@@ -66,7 +67,7 @@ static void free_image_data(void *info, const void *data, size_t size)
     int height = 0;
     WebPGetInfo([myData bytes], [myData length], &width, &height);
     
-    NSLog(@"Image Width: %d Image Height: %d", width, height); 
+    NSLog(@"Image Width: %d Image Height: %d", width, height);
     
     // Decode the WebP image data into a RGBA value array
     uint8_t *data = WebPDecodeRGBA([myData bytes], [myData length], &width, &height);
@@ -75,15 +76,15 @@ static void free_image_data(void *info, const void *data, size_t size)
     CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, width*height*4, free_image_data);
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault;
-    CGColorRenderingIntent renderingIntent = kCGRenderingIntentDefault; 
+    CGColorRenderingIntent renderingIntent = kCGRenderingIntentDefault;
     CGImageRef imageRef = CGImageCreate(width, height, 8, 32, 4*width, colorSpaceRef, bitmapInfo, provider, NULL, NO, renderingIntent);
     UIImage *newImage = [[UIImage imageWithCGImage:imageRef] retain];
     
     // Set the image into the image view and make image view and the scroll view to the correct size
-    self.testImageView.bounds = CGRectMake(0, 0, width, height);
+    self.testImageView.frame = CGRectMake(0, 0, width, height);
     self.testImageView.image = newImage;
     
-    [imageScrollView setContentSize:testImageView.bounds.size];
+    self.imageScrollView.contentSize = CGSizeMake(width, height);
     
     CGImageRelease(imageRef);
     CGColorSpaceRelease(colorSpaceRef);
@@ -92,28 +93,35 @@ static void free_image_data(void *info, const void *data, size_t size)
     [newImage release];
 }
 
+#pragma mark - UIScrollViewDelegate
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.testImageView;
+}
+
 #pragma mark - UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-	return 1;
+    return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-	return [webpImages count];
+    return webpImages.count;
 }
 
-#pragma mark - UIPickerViewDelegate 
+#pragma mark - UIPickerViewDelegate
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[webpImages objectAtIndex:row] componentsSeparatedByString:@"/"] lastObject];
+    return [[webpImages[row] componentsSeparatedByString:@"/"] lastObject];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    [self displayImage:[webpImages objectAtIndex:row]];
+    [self displayImage:webpImages[row]];
 }
 
 @end
