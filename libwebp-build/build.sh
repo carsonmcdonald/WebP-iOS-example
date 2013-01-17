@@ -8,9 +8,9 @@
 # with the name WebP.framework
 #
 
-SDK=4.3
-PLATFORMS="iPhoneSimulator iPhoneOS-V6 iPhoneOS-V7"
-DEVELOPER=/Developer
+SDK=6.0
+PLATFORMS="iPhoneSimulator iPhoneOS-V7 iPhoneOS-V7s"
+DEVELOPER=`xcode-select -print-path`
 TOPDIR=`pwd`
 BUILDDIR="$TOPDIR/tmp"
 FINALDIR="$TOPDIR/WebP.framework"
@@ -26,10 +26,10 @@ do
   then
     PLATFORM="iPhoneOS"
     ARCH="armv7"
-  elif [ "${PLATFORM}" == "iPhoneOS-V6" ]
+  elif [ "${PLATFORM}" == "iPhoneOS-V7s" ]
   then
     PLATFORM="iPhoneOS"
-    ARCH="armv6"
+    ARCH="armv7s"
   else
     ARCH="i386"
   fi
@@ -42,20 +42,20 @@ do
   export SDKROOT="${DEVROOT}/SDKs/${PLATFORM}${SDK}.sdk"
   export CC=${DEVROOT}/usr/bin/gcc
   export LD=${DEVROOT}/usr/bin/ld
-  export CPP=${DEVROOT}/usr/bin/cpp
+  export CPP=${DEVROOT}/usr/bin/llvm-cpp-4.2
   export CXX=${DEVROOT}/usr/bin/g++
   export AR=${DEVROOT}/usr/bin/ar
   export AS=${DEVROOT}/usr/bin/as
   export NM=${DEVROOT}/usr/bin/nm
-  export CXXCPP=$DEVROOT/usr/bin/cpp
+  export CXXCPP=$DEVROOT/usr/bin/llvm-cpp-4.2
   export RANLIB=$DEVROOT/usr/bin/ranlib
   export LDFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -L${ROOTDIR}/lib"
   export CFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${ROOTDIR}/include"
   export CXXFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${ROOTDIR}/include"
 
-  rm -rf libwebp-0.1.2
-  tar xzf libwebp-0.1.2.tar.gz
-  cd libwebp-0.1.2
+  rm -rf libwebp-0.2.0
+  tar xzf libwebp-0.2.0.tar.gz
+  cd libwebp-0.2.0
 
   sh autogen.sh
 
@@ -71,5 +71,5 @@ done
 
 ${DEVROOT}/usr/bin/lipo -create $LIBLIST -output $FINALDIR/WebP
 
-rm -rf libwebp-0.1.2
+rm -rf libwebp-0.2.0
 rm -rf ${BUILDDIR}
