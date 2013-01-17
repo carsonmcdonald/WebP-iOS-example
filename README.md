@@ -13,7 +13,7 @@ To use the demo project just open it with xcode and build.
 
 ## LICENSE
 
-Copyright (c) 2011 Carson McDonald
+Copyright (c) 2011-2013 Carson McDonald
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
