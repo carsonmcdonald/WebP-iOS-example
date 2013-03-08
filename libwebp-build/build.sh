@@ -8,7 +8,7 @@
 # with the name WebP.framework
 #
 
-SDK=6.0
+SDK=6.1
 PLATFORMS="iPhoneSimulator iPhoneOS-V7 iPhoneOS-V7s"
 DEVELOPER=`xcode-select -print-path`
 TOPDIR=`pwd`
@@ -53,9 +53,9 @@ do
   export CFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${ROOTDIR}/include"
   export CXXFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${ROOTDIR}/include"
 
-  rm -rf libwebp-0.2.0
-  tar xzf libwebp-0.2.0.tar.gz
-  cd libwebp-0.2.0
+  rm -rf libwebp-0.2.1
+  tar xzf libwebp-0.2.1.tar.gz
+  cd libwebp-0.2.1
 
   sh autogen.sh
 
@@ -71,5 +71,5 @@ done
 
 ${DEVROOT}/usr/bin/lipo -create $LIBLIST -output $FINALDIR/WebP
 
-rm -rf libwebp-0.2.0
+rm -rf libwebp-0.2.1
 rm -rf ${BUILDDIR}
