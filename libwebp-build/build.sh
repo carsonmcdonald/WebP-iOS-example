@@ -53,9 +53,9 @@ do
   export CFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${ROOTDIR}/include"
   export CXXFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${ROOTDIR}/include"
 
-  rm -rf libwebp-0.3.0
-  tar xzf libwebp-0.3.0.tar.gz
-  cd libwebp-0.3.0
+  rm -rf libwebp-0.3.1
+  tar xzf libwebp-0.3.1.tar.gz
+  cd libwebp-0.3.1
 
   sh autogen.sh
 
@@ -71,5 +71,5 @@ done
 
 ${DEVROOT}/usr/bin/lipo -create $LIBLIST -output $FINALDIR/WebP
 
-rm -rf libwebp-0.3.0
+rm -rf libwebp-0.3.1
 rm -rf ${BUILDDIR}
