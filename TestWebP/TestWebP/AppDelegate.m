@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  TestWebP
-//
-//  Created by Carson on 1/17/13.
-//  Copyright (c) 2013 Carson McDonald. All rights reserved.
-//
-
 #import "AppDelegate.h"
 
 @implementation AppDelegate
