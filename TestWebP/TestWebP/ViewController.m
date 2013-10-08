@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad
 {
-    webpImages = [[[NSBundle mainBundle] pathsForResourcesOfType:@"webp" inDirectory:nil] retain];
+    webpImages = [[NSBundle mainBundle] pathsForResourcesOfType:@"webp" inDirectory:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -23,15 +23,6 @@
     [super viewDidAppear:animated];
     
     [self displayImage:[webpImages objectAtIndex:0]];
-}
-
-- (void)dealloc
-{
-    [webpImages release];
-    [_imagePickerView release];
-    [_imageScrollView release];
-    [_testImageView release];
-    [super dealloc];
 }
 
 #pragma mark - WebP example
@@ -70,7 +61,7 @@ static void free_image_data(void *info, const void *data, size_t size)
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault;
     CGColorRenderingIntent renderingIntent = kCGRenderingIntentDefault;
     CGImageRef imageRef = CGImageCreate(width, height, 8, 32, 4*width, colorSpaceRef, bitmapInfo, provider, NULL, NO, renderingIntent);
-    UIImage *newImage = [[UIImage imageWithCGImage:imageRef] retain];
+    UIImage *newImage = [UIImage imageWithCGImage:imageRef];
     
     // Set the image into the image view and make image view and the scroll view to the correct size
     self.testImageView.frame = CGRectMake(0, 0, width, height);
@@ -81,8 +72,6 @@ static void free_image_data(void *info, const void *data, size_t size)
     CGImageRelease(imageRef);
     CGColorSpaceRelease(colorSpaceRef);
     CGDataProviderRelease(provider);
-    
-    [newImage release];
 }
 
 #pragma mark - UIScrollViewDelegate
