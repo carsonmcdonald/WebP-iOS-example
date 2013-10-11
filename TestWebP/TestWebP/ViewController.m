@@ -33,6 +33,8 @@
 static void free_image_data(void *info, const void *data, size_t size)
 {
     free((void *)data);
+    
+    // WebPFreeDecBuffer(&config.output);
 }
 
 - (void)displayImage:(NSString *)filePath
@@ -53,6 +55,15 @@ static void free_image_data(void *info, const void *data, size_t size)
     
     startTime = [NSDate date];
     
+    WebPDecoderConfig config;
+    WebPInitDecoderConfig(&config);
+    // WebPGetFeatures(data, data_size, &config.input);
+    
+    //config.options.no_fancy_upsampling = 1;
+    //config.options.bypass_filtering = 1;
+    config.options.use_threads = 1;
+    config.output.colorspace = MODE_RGBA;
+    
     // Get the width and height of the selected WebP image
     int width = 0;
     int height = 0;
@@ -65,14 +76,16 @@ static void free_image_data(void *info, const void *data, size_t size)
     startTime = [NSDate date];
     
     // Decode the WebP image data into a RGBA value array
-    uint8_t *data = WebPDecodeRGBA([myData bytes], [myData length], &width, &height);
+    //uint8_t *data = WebPDecodeRGBA([myData bytes], [myData length], &width, &height);
+    WebPDecode([myData bytes], [myData length], &config);
     
     NSLog(@"Time to decode WebP data: %0.2fms", [startTime timeIntervalSinceNow] * -1000.0);
     
     startTime = [NSDate date];
     
     // Construct a UIImage from the decoded RGBA value array
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, width*height*4, free_image_data);
+    //CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, data, width*height*4, free_image_data);
+    CGDataProviderRef provider = CGDataProviderCreateWithData(&config, config.output.u.RGBA.rgba, width*height*4, free_image_data);
     CGColorSpaceRef colorSpaceRef = CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault;
     CGColorRenderingIntent renderingIntent = kCGRenderingIntentDefault;
