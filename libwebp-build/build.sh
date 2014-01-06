@@ -46,9 +46,9 @@ do
   export CXXCPP=${DEVROOT}/usr/bin/cpp
   export RANLIB=${DEVROOT}/usr/bin/ranlib
 
-  rm -rf libwebp-0.3.1
-  tar xzf libwebp-0.3.1.tar.gz
-  cd libwebp-0.3.1
+  rm -rf libwebp-0.4.0
+  tar xzf libwebp-0.4.0.tar.gz
+  cd libwebp-0.4.0
 
   sh autogen.sh
 
@@ -72,5 +72,5 @@ done
 
 ${DEVROOT}/usr/bin/lipo -create $LIBLIST -output $FINALDIR/WebP
 
-rm -rf libwebp-0.3.1
+rm -rf libwebp-0.4.0
 rm -rf ${BUILDDIR}
