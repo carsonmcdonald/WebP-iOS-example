@@ -8,7 +8,7 @@
 # with the name WebP.framework
 #
 
-SDK=7.0
+SDK=7.1
 PLATFORMS="iPhoneSimulator iPhoneOS-V7 iPhoneOS-V7s"
 DEVELOPER=`xcode-select -print-path`
 TOPDIR=`pwd`
@@ -25,14 +25,14 @@ for PLATFORM in ${PLATFORMS}
 do
   if [ "${PLATFORM}" == "iPhoneOS-V7" ]
   then
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/"
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/"
     ARCH="armv7"
   elif [ "${PLATFORM}" == "iPhoneOS-V7s" ]
   then
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/"
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/"
     ARCH="armv7s"
   else
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/"
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/"
     ARCH="i386"
   fi
 
