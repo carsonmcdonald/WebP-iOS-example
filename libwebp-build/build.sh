@@ -9,7 +9,7 @@
 #
 
 SDK=7.1
-PLATFORMS="iPhoneSimulator iPhoneOS-V7 iPhoneOS-V7s"
+ARCHS="armv7 armv7s arm64 i386"
 DEVELOPER=`xcode-select -print-path`
 TOPDIR=`pwd`
 BUILDDIR="$TOPDIR/tmp"
@@ -21,19 +21,22 @@ mkdir -p $BUILDDIR
 mkdir -p $FINALDIR
 mkdir $FINALDIR/Headers/
 
-for PLATFORM in ${PLATFORMS}
+for ARCH in ${ARCHS}
 do
-  if [ "${PLATFORM}" == "iPhoneOS-V7" ]
+  if [ "${ARCH}" == "arm64" ]
   then
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/"
-    ARCH="armv7"
-  elif [ "${PLATFORM}" == "iPhoneOS-V7s" ]
-  then
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/"
-    ARCH="armv7s"
+    HOST="arm-apple-darwin"
+    MINOS="7.0"
   else
+    HOST="${ARCH}-apple-darwin"
+    MINOS="5.0"
+  fi
+
+  if [ "${ARCH}" == "i386" ]
+  then
     SDKPATH="${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/"
-    ARCH="i386"
+  else
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/"
   fi
 
   export CC=${DEVROOT}/usr/bin/cc
@@ -46,9 +49,9 @@ do
   export CXXCPP=${DEVROOT}/usr/bin/cpp
   export RANLIB=${DEVROOT}/usr/bin/ranlib
 
-  rm -rf libwebp-0.4.0
-  tar xzf libwebp-0.4.0.tar.gz
-  cd libwebp-0.4.0
+  rm -rf libwebp-0.4.1
+  tar xzf libwebp-0.4.1.tar.gz
+  cd libwebp-0.4.1
 
   sh autogen.sh
 
@@ -56,11 +59,11 @@ do
   rm -rf "${ROOTDIR}"
   mkdir -p "${ROOTDIR}"
 
-  export LDFLAGS="-arch ${ARCH} -miphoneos-version-min=5.0 -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
-  export CFLAGS="-arch ${ARCH} -miphoneos-version-min=5.0 -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
-  export CXXFLAGS="-arch ${ARCH} -miphoneos-version-min=5.0 -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
+  export LDFLAGS="-arch ${ARCH} -miphoneos-version-min=${MINOS} -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
+  export CFLAGS="-arch ${ARCH} -miphoneos-version-min=${MINOS} -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
+  export CXXFLAGS="-arch ${ARCH} -miphoneos-version-min=${MINOS} -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
 
-  ./configure --host=${ARCH}-apple-darwin --prefix=${ROOTDIR} --disable-shared --enable-static
+  ./configure --host=${HOST} --prefix=${ROOTDIR} --disable-shared --enable-static
   make
   make install
 
@@ -72,5 +75,5 @@ done
 
 ${DEVROOT}/usr/bin/lipo -create $LIBLIST -output $FINALDIR/WebP
 
-rm -rf libwebp-0.4.0
+rm -rf libwebp-0.4.1
 rm -rf ${BUILDDIR}
