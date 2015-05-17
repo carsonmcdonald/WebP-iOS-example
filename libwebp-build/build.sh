@@ -8,7 +8,7 @@
 # with the name WebP.framework
 #
 
-SDK=7.1
+SDK=8.3
 PLATFORMS="iPhoneSimulator iPhoneOS-V7 iPhoneOS-V7s"
 DEVELOPER=`xcode-select -print-path`
 TOPDIR=`pwd`
@@ -25,15 +25,16 @@ for PLATFORM in ${PLATFORMS}
 do
   if [ "${PLATFORM}" == "iPhoneOS-V7" ]
   then
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/"
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/"
     ARCH="armv7"
   elif [ "${PLATFORM}" == "iPhoneOS-V7s" ]
   then
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/"
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/"
     ARCH="armv7s"
   else
-    SDKPATH="${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/"
-    ARCH="i386"
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.3.sdk/"
+    #ARCH="i386"
+    ARCH="x86_64"
   fi
 
   export CC=${DEVROOT}/usr/bin/cc
@@ -46,9 +47,9 @@ do
   export CXXCPP=${DEVROOT}/usr/bin/cpp
   export RANLIB=${DEVROOT}/usr/bin/ranlib
 
-  rm -rf libwebp-0.4.0
-  tar xzf libwebp-0.4.0.tar.gz
-  cd libwebp-0.4.0
+  rm -rf libwebp-0.4.3
+  tar xzf libwebp-0.4.3.tar.gz
+  cd libwebp-0.4.3
 
   sh autogen.sh
 
@@ -72,5 +73,5 @@ done
 
 ${DEVROOT}/usr/bin/lipo -create $LIBLIST -output $FINALDIR/WebP
 
-rm -rf libwebp-0.4.0
+rm -rf libwebp-0.4.3
 rm -rf ${BUILDDIR}
