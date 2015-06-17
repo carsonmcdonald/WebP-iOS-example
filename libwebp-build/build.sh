@@ -9,7 +9,7 @@
 #
 
 SDK=8.3
-PLATFORMS="iPhoneSimulator iPhoneOS-V7 iPhoneOS-V7s iPhoneOS-ARM64"
+PLATFORMS="iPhoneSimulator iPhoneSimulator-64 iPhoneOS-V7 iPhoneOS-V7s iPhoneOS-ARM64"
 DEVELOPER=`xcode-select -print-path`
 TOPDIR=`pwd`
 BUILDDIR="$TOPDIR/tmp"
@@ -38,9 +38,14 @@ do
     SDKPATH="${DEVELOPER}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/"
     ARCH="arm64"
     HOST="aarch64-apple-darwin"
-  else
+  elif [ "${PLATFORM}" == "iPhoneSimulator-64" ]
+  then
     SDKPATH="${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.3.sdk/"
     ARCH="x86_64"
+    HOST=${ARCH}-apple-darwin
+  else
+    SDKPATH="${DEVELOPER}/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator8.3.sdk/"
+    ARCH="i386"
     HOST=${ARCH}-apple-darwin
   fi
 
@@ -64,11 +69,12 @@ do
   rm -rf "${ROOTDIR}"
   mkdir -p "${ROOTDIR}"
 
-  export LDFLAGS="-arch ${ARCH} -miphoneos-version-min=7.0 -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
-  export CFLAGS="-arch ${ARCH} -miphoneos-version-min=7.0 -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
-  export CXXFLAGS="-arch ${ARCH} -miphoneos-version-min=7.0 -pipe -no-cpp-precomp -isysroot ${SDKPATH}"
+  export LDFLAGS="-arch ${ARCH} -miphoneos-version-min=7.0 -pipe -isysroot ${SDKPATH} -O3 -DNDEBUG"
+  export CFLAGS="-arch ${ARCH} -miphoneos-version-min=7.0 -pipe -isysroot ${SDKPATH} -O3 -DNDEBUG"
+  export CXXFLAGS="-arch ${ARCH} -miphoneos-version-min=7.0 -pipe -isysroot ${SDKPATH} -O3 -DNDEBUG"
 
-  ./configure --host=${HOST} --prefix=${ROOTDIR} --disable-shared --enable-static
+./configure --host=${HOST} --prefix=${ROOTDIR} --disable-shared --enable-static \
+            --enable-libwebpdecoder --enable-swap-16bit-csp --build=$(./config.guess)
   make
   make install
 
